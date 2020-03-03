@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "@emotion/styled";
+import { Global, css } from "@emotion/core";
+import UploadForm from "./components/UploadForm";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Global
+        styles={css`
+          body {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            background: white;
+          }
+          #root {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background: white;
+          }
+        `}
+      />
+      <UploadForm />
+    </Container>
   );
 }
 
